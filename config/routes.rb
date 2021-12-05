@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
-  # get 'projects/index'
-  get "/projects", to: "projects#index"
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+  resources :projects, only: [:index] do
+    resources :todos, only: :update
+  end
+  resources :todos, only: :create
+  root 'projects#index'
 end

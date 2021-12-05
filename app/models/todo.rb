@@ -1,3 +1,3 @@
 class Todo < ApplicationRecord
-    belongs_to :projects, optional: true
+    belongs_to :project, optional: true
 end
